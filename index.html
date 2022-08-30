@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
 <meta name="description" content="A larger org chart with an Overview and searching capability."/> 
-<link rel="stylesheet" href="../assets/css/style.css"/> 
+<link rel="stylesheet" href="./assets/css/style.css"/> 
 <!-- Copyright 1998-2022 by Northwoods Software Corporation. -->
 <title>Org Chart Static</title>
 </head>
@@ -68,11 +68,11 @@
                   treeStyle: go.TreeLayout.StyleLastParents,
                   // properties for most of the tree:
                   angle: 90,
-                  layerSpacing: 50,
+                  layerSpacing: 45,
                   // properties for the "last parents":
                   alternateAngle: 0,
                   alternateAlignment: go.TreeLayout.AlignmentStart,
-                  alternateNodeIndent: 15,
+                  alternateNodeIndent: 12,
                   alternateNodeIndentPastParent: 1,
                   alternateNodeSpacing: 20,
                   alternateLayerSpacing: 40,
@@ -134,14 +134,14 @@
                     row: 0, alignment: go.Spot.Left,
                     font: "16px Roboto, sans-serif",
                     stroke: "rgba(0, 0, 0, .87)",
-                    maxSize: new go.Size(160, NaN)
+                    maxSize: new go.Size(200, NaN)
                   },
                   new go.Binding("text", "name")
                 ),
                 $(go.TextBlock, textStyle("title"),
                   {
                     row: 1, alignment: go.Spot.Left,
-                    maxSize: new go.Size(160, NaN)
+                    maxSize: new go.Size(200, NaN)
                   },
                   new go.Binding("text", "title"),
                   new go.Binding("margin", "title", head => mt4),
@@ -202,51 +202,51 @@
 
       // set up the nodeDataArray, describing each person/position
       var nodeDataArray = [
-        { key: 0, name: "Asamblea", nation: "enfermera", title: "Asamblea de Socios" },
-        { key: 1, boss: 0, name: "Directorio", nation: "Ireland", title: "Ignacio F. Escuti - Alejandro Sarria"},
-        { key: 3, boss: 1, name: "Coordinacion General", nation: "Denmark", title: "Susana Lopez" },
-        { key: 4, boss: 3, name: "RRHH", nation: "Denmark", title: "Ayelen Bianchetti", personal: 1, auxiliares: 1},
-        { key: 5, boss: 3, name: "Administracion", nation: "Denmark", },
-        { key: 6, boss: 5, name: "Contabilidad y Finanzas", nation: "Denmark", title: "Natalia Lobo" },
-        { key: 8, boss: 6, name: "Tesoreria", nation: "Denmark", personal: 1},
-        { key: 16, boss: 6, name: "Contabilidad", nation: "Denmark", personal: 1, auxiliares: "Externo" },
-        { key: 9, boss: 6, name: "Cobranzas", nation: "Denmark",  personal: 0},
-        { key: 7, boss: 3, name: "Sistemas", nation: "Denmark", title: "Harvey Morales", auxiliares: 1 },
-        { key: 10, boss: 5, name: "Prestaciones Medicas", nation: "Denmark", title: "Gonzalo Avalos" },
-        { key: 21, boss: 10, name: "Liquidaciones", nation: "Denmark", personal: 1},
-        { key: 22, boss: 10, name: "Auditoria", nation: "Denmark"},
-        { key: 23, boss: 10, name: "Facturación", nation: "Denmark", personal: 3},
-        { key: 24, boss: 10, name: "Convenios", nation: "Denmark",  personal: 1},
-        { key: 11, boss: 5, name: "Compras", nation: "Denmark", title: "Gonzalo Avalos   " },
-        { key: 25, boss: 11, name: "Farmacia", nation: "Denmark", personal: 3, auxiliares: 1},
-        { key: 26, boss: 11, name: "Compras Generales", nation: "Denmark",  },
+        { key: 0, name:            "Asamblea               ", nation: "enfermera", title: "Asamblea de Socios" },
+        { key: 1, boss: 0,   name: "Directorio             ", nation: "Ireland", title: "Ignacio F. Escuti - Alejandro Sarria"},
+        { key: 3, boss: 1,   name: "Coordinacion General   ", nation: "Denmark", title: "Susana Lopez" },
+        { key: 4, boss: 3,   name: "RRHH                   ", nation: "Denmark", title: "Ayelen Bianchetti", personal: 1, auxiliares: 1},
+        { key: 5, boss: 3,   name: "Administracion         ", nation: "Denmark", },
+        { key: 6, boss: 5,   name: "Contabilidad y Finanzas", nation: "Denmark", title: "Natalia Lobo" },
+        { key: 8, boss: 6,   name: "Tesoreria              ", nation: "Denmark", personal: 1},
+        { key: 16, boss: 6,  name: "Contabilidad           ", nation: "Denmark", personal: 1, auxiliares: "Externo" },
+        { key: 9, boss: 6,   name: "Cobranzas              ", nation: "Denmark",  personal: 0},
+        { key: 7, boss: 3,   name: "Sistemas               ", nation: "Denmark", title: "Harvey Morales", auxiliares: 1 },
+        { key: 10, boss: 5,  name: "Prestaciones Medicas   ", nation: "Denmark", title: "Gonzalo Avalos" },
+        { key: 21, boss: 10, name: "Liquidaciones          ", nation: "Denmark", personal: 1},
+        { key: 22, boss: 10, name: "Auditoria              ", nation: "Denmark"},
+        { key: 23, boss: 10, name: "Facturación            ", nation: "Denmark", personal: 3},
+        { key: 24, boss: 10, name: "Convenios              ", nation: "Denmark",  personal: 1},
+        { key: 11, boss: 5,  name: "Compras                ", nation: "Denmark", title: "Gonzalo Avalos   " },
+        { key: 25, boss: 11, name: "Farmacia               ", nation: "Denmark", personal: 3, auxiliares: 1},
+        { key: 26, boss: 11, name: "Compras Generales      ", nation: "Denmark",  },
         { key: 27, boss: 26, name: "Medicamentos y Descartables", nation: "Denmark", personal: 1 },
         { key: 28, boss: 26, name: "Equipamiento, Reparacion y Mantenimiento", nation: "Denmark"},
-        { key: 12, boss: 3, name: "Secretaria", nation: "Denmark"},
-        { key: 43, boss: 12, name: "Ambulatorio", nation: "Denmark", title: "Andrea Rodriguez " },
-        { key: 41, boss: 43, name: "Secretaria Ambulatoria", nation: "Denmark",personal: 7, auxiliares: 4 },
-        { key: 41, boss: 43, name: "Central de Turnos", nation: "Denmark", personal: 2 , auxiliares: 4},
-        { key: 42, boss: 43, name: "Archivo", nation: "Denmark",  personal: 1},
-        { key: 49, boss: 12, name: "Telefonista", nation: "Denmark", title: "Andrea Rodriguez ", personal: 5 },
-        { key: 17, boss: 12, name: "Internado", nation: "Denmark", personal: 2 },
-        { key: 13, boss: 3, name: "Enfermeria", nation: "enfermera"},
-        { key: 18, boss: 13, name: "Enfermeria de Piso", nation: "enfermera", title: "Cistina Valentino ",personal: 25 },
-        { key: 19, boss: 13, name: "Enfermeria de UTI/UCO", nation: "enfermera", title: "Selva Coccio",personal: 25 },
+        { key: 12, boss: 3,  name: "Secretaria             ", nation: "Denmark"},
+        { key: 43, boss: 12, name: "Ambulatorio            ", nation: "Denmark", title: "Andrea Rodriguez " },
+        { key: 41, boss: 43, name: "Secretaria Ambulatoria ", nation: "Denmark",personal: 7, auxiliares: 4 },
+        { key: 41, boss: 43, name: "Central de Turnos      ", nation: "Denmark", personal: 2 , auxiliares: 4},
+        { key: 42, boss: 43, name: "Archivo                ", nation: "Denmark",  personal: 1},
+        { key: 49, boss: 12, name: "Telefonista            ", nation: "Denmark", title: "Andrea Rodriguez ", personal: 5 },
+        { key: 17, boss: 12, name: "Internado              ", nation: "Denmark", personal: 2 },
+        { key: 13, boss: 3,  name: "Enfermeria             ", nation: "enfermera"},
+        { key: 18, boss: 13, name: "Enfermeria de Piso     ", nation: "enfermera", title: "Cistina Valentino ",personal: 25 },
+        { key: 19, boss: 13, name: "Enfermeria de UTI/UCO  ", nation: "enfermera", title: "Selva Coccio",personal: 25 },
         { key: 20, boss: 13, name: "Enfermeria de Guardia Central", nation: "enfermera", title: "Selva Coccio", personal: 5 },
-        { key: 14, boss: 3, name: "Cirugia", nation: "Denmark", title: "Anahi Escalerandi" },
-        { key: 29, boss: 14, name: "Mucamas", nation: "Denmark",personal: 2 },
-        { key: 30, boss: 14, name: "Instrumentador", nation: "Denmark",personal: 7},
-        { key: 31, boss: 14, name: "Circulares", nation: "Denmark",personal: 4 },
+        { key: 14, boss: 3,  name: "Cirugia                ", nation: "Denmark", title: "Anahi Escalerandi" },
+        { key: 29, boss: 14, name: "Mucamas                ", nation: "Denmark",personal: 2 },
+        { key: 30, boss: 14, name: "Instrumentador         ", nation: "Denmark",personal: 7},
+        { key: 31, boss: 14, name: "Circulares             ", nation: "Denmark",personal: 4 },
         { key: 31, boss: 14, name: "Central de Esterilización", personal: 1 },
-        { key: 15, boss: 3, name: "Auxiliar", nation: "Denmark" },
-        { key: 32, boss: 15, name: "Mantenimiento", nation: "Denmark", title: "Jorge Ferreyra" },
-        { key: 38, boss: 32, name: "Mantenimiento Edilicio", nation: "Denmark",personal: 2 },
+        { key: 15, boss: 3,  name: "Auxiliar               ", nation: "Denmark" },
+        { key: 32, boss: 15, name: "Mantenimiento          ", nation: "Denmark", title: "Jorge Ferreyra" },
+        { key: 38, boss: 32, name: "Mantenimiento Edilicio ", nation: "Denmark",personal: 2 },
         { key: 39, boss: 32, name: "Mantenimiento Equipamiento e Instrumantal Medico", nation: "Denmark",personal: 1 },
-        { key: 40, boss: 15, name: "Cocina", nation: "Denmark", title: "Belen Palaveccino ",personal: 3 },
-        { key: 34, boss: 15, name: "Mucamas", nation: "Denmark", title: "Cristina Valentino ",personal: 9 },
-        { key: 35, boss: 15, name: "Lavadero", nation: "Denmark", title: "Cristina Valentino ",personal: 4 },
-        { key: 36, boss: 15, name: "Camillero", nation: "Denmark", title: "Cristina Valentino ",personal: 3 },
-        { key: 37, boss: 15, name: "Seguridad", nation: "Denmark", personal: 1 },
+        { key: 40, boss: 15, name: "Cocina                 ", nation: "Denmark", title: "Belen Palaveccino ",personal: 3 },
+        { key: 34, boss: 15, name: "Mucamas                ", nation: "Denmark", title: "Cristina Valentino ",personal: 9 },
+        { key: 35, boss: 15, name: "Lavadero               ", nation: "Denmark", title: "Cristina Valentino ",personal: 4 },
+        { key: 36, boss: 15, name: "Camillero              ", nation: "Denmark", title: "Cristina Valentino ",personal: 3 },
+        { key: 37, boss: 15, name: "Seguridad              ", nation: "Denmark", personal: 1 },
 
 
       ];
